@@ -1,62 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Incident-management-App
+Clone or download repositery inside web accessable folder and the switch branch from "main" to "master".
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Unzip vendor folder on project root, i have added zip folder of vendor since it was taking time to upload
 
-## About Laravel
+Nevigate to .env file and configure database also create a databse with the name which you wil write down inside .env file.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Run migration usin "php artisan migrate" command from your command line to execute all the necessary migrations.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Run "php artisan db:seed --class=CategorySeeder" command from your command prompt to insert required data in database.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Use below POST endpoint to add incident
+http://projectroot/api/add (example - https://incidentmanagement/api/add)
 
-## Learning Laravel
+# Below is the sample code of POST endpoint of my local machine
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'http://localhost/incident-management/api/add',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{
+    "data": [
+        {
+            "id": 0,
+            "location": {
+                "latitude": 12.9231501,
+                "longitude": 74.7818517
+            },
+            "title": "Test Incident",
+            "category": 3,
+            "people": [
+                {
+                    "name": "Joy",
+                    "type": "staff"
+                },
+                {
+                    "name": "Kevin",
+                    "type": "witness"
+                },
+                {
+                    "name": "Danni",
+                    "type": "staff"
+                }
+            ],
+            "comments": "This is a string of comments",
+            "incidentDate": "2020-09-01T13:26:00+00:00",
+            "createDate": "2020-09-01T13:32:59+02:00",
+            "modifyDate": "2020-09-01T13:32:59+01:00"
+        }
+    ]
+}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json'
+  ),
+));
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+$response = curl_exec($curl);
 
-## Laravel Sponsors
+curl_close($curl);
+echo $response;
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Use below GET endpoint to get list of added incidents
+http://projectroot/api/get (example - https://incidentmanagement/api/get)
 
-### Premium Partners
+Test cases for the API has been written inside "tests/Unit/IncidentTest.php". Use "phpunit" command to execute test cases or if you want to execute any spefic test case class then use "phpunit Tests\Unit\UnitTestClass.php" command from command prompt. 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
