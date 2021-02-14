@@ -1,6 +1,8 @@
 # Incident-management-App
 Clone or download repositery inside web accessable folder and the switch branch from "main" to "master".
 
+Unzip vendor folder on project root, i have added zip folder of vendor since it was taking time to upload
+
 Nevigate to .env file and configure database also create a databse with the name which you wil write down inside .env file.
 
 Run migration usin "php artisan migrate" command from your command line to execute all the necessary migrations.
