@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/xampp/htdocs/incident-management/config/database.php</file>
+            <file>file:/D:/xampp/htdocs/incident-management/app/Http/Controllers/IncidentController.php</file>
+            <file>file:/D:/xampp/htdocs/incident-management/routes/api.php</file>
+            <file>file:/D:/xampp/htdocs/incident-management/database/seeders/IncidentSeeder.php</file>
+            <file>file:/D:/xampp/htdocs/incident-management/app/Models/Incident.php</file>
+            <file>file:/D:/xampp/htdocs/incident-management/app/Http/Controllers/IncidentController_old.php</file>
+            <file>file:/D:/xampp/htdocs/incident-management/app/Http/Controllers/newEmptyPHP.php</file>
+            <file>file:/D:/xampp/htdocs/incident-management/app/Models/Incident_old.php</file>
+            <file>file:/D:/xampp/htdocs/incident-management/database/migrations/2021_02_13_164139_create_incidents_table.php</file>
+        </group>
+    </open-files>
+</project-private>
