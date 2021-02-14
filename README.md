@@ -1,5 +1,5 @@
 # Incident-management-App
-Clone or download repositery and place it to web accessable folder.
+Clone or download repositery inside web accessable folder and the switch branch from "main" to "master".
 
 Nevigate to .env file and configure database also create a databse with the name which you wil write down inside .env file.
 
