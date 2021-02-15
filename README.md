@@ -1,7 +1,7 @@
 # Incident-management-App
-Clone or download repositery inside web accessable folder and the switch branch from "main" to "master".
+Clone or download repositery inside web accessable folder and then switch branch from "main" to "master".
 
-Unzip vendor folder on project root, i have added zip folder of vendor since it was taking time to upload
+Unzip vendor folder on project root, i have added zip folder of vendor since it was taking time to upload.
 
 Nevigate to .env file and configure database also create a databse with the name which you wil write down inside .env file.
 
@@ -68,6 +68,6 @@ echo $response;
 Use below GET endpoint to get list of added incidents
 http://projectroot/api/get (example - https://incidentmanagement/api/get)
 
-Test cases for the API has been written inside "tests/Unit/IncidentTest.php". Use "phpunit" command to execute test cases or if you want to execute any spefic test case class then use "phpunit Tests\Unit\UnitTestClass.php" command from command prompt. 
+Test cases for the API has been written inside "tests/Unit/IncidentTest.php". Use "phpunit" command to execute test cases or if you want to execute spefic test case class then use "phpunit Tests\Unit\UnitTestClass.php" command from command prompt. 
 
 
